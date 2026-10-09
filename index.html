@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Parcial de Ultra-Alta Discriminación: Genética Molecular y HGVS</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .option-label { transition: all 0.2s ease-in-out; }
+        .option-label:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen antialiased">
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8 shadow-2xl text-center">
+            <h1 class="text-3xl font-extrabold text-teal-400 mb-2">Evaluación Parcial: Ultra-Discriminación en Genética Molecular y Nomenclatura HGVS</h1>
+            <p class="text-slate-300 text-sm md:text-base">Nivel Experto con Distractores de Alta Complejidad: Símbolos, Signos, Dinámicas de Splicing, Paradas Prematuras/Retrasadas y Reportes Clínicos (40 Preguntas)</p>
+            <div class="mt-4 inline-flex items-center gap-4 bg-slate-950 px-4 py-2 rounded-lg border border-slate-800 text-sm">
+                <span class="text-teal-400 font-semibold">Total de Preguntas: 40</span>
+                <span class="text-slate-600">|</span>
+                <span class="text-amber-400 font-semibold" id="timer">Tiempo transcurrido: 00:00</span>
+            </div>
+        </header>
+
+        <!-- Formulario del Examen -->
+        <form id="examForm" class="space-y-6">
+
+            <!-- PREGUNTA 1 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 1: Gen CFTR - Símbolo X y Cinética de Parada</div>
+                <h3 class="text-lg font-bold text-white mb-3">1. En el reporte del gen <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">CFTR</code> se describe la variante <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1624G>T</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Gly542X</code>)[cite: 1]. Desde la perspectiva estricta de la nomenclatura HGVS y la biología molecular, ¿cuál es la distinción exacta entre el significado del símbolo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">X</code> y sus distractores conceptuales más comunes?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q1" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El símbolo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">X</code> denota la supresión completa del codón de inicio traduccional por desplazamiento de marco aguas arriba, induciendo una terminación retrasada en el extremo amino terminal.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q1" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El símbolo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">X</code> (o alternativamente <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">Ter</code>) especifica la conversión del codón codificante en un codón de terminación anticipado (nonsense), desencadenando un evento de parada <b>prematura</b> originado por una transversión nucleotídica (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">G>T</code>).</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q1" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El símbolo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">X</code> representa un aminoácido exógeno no codificado incorporado por lectura defectuosa del ribosoma durante una transición purínica.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q1" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El símbolo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">X</code> indica la deleción del codón completo sin alterar el marco de lectura, generando una terminación retrasada por supresión del stop natural.</span>
+                    </label>
+                </div>
+                <div id="feedback-q1" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 2 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 2: Gen MSH2 - Signos Intrónicos (+ y -)</div>
+                <h3 class="text-lg font-bold text-white mb-3">2. Para la variante <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.942+2A>T</code> en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">MSH2</code>[cite: 1], ¿cuál es la interpretación toxico-cinética y posicional rigurosa del signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">+</code> frente a sus posibles confusiones normativas?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q2" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">+</code> señala que la variante se ubica a dos bases antes del inicio del exón (aguas arriba en el intrón), contando en dirección contraria a la transcripción.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q2" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">+</code> denota que la posición está situada dentro de la región intrónica, exactamente a dos nucleótidos de distancia del límite exón-intrón, contando aguas abajo a partir del extremo 3' del exón de referencia (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.942</code>)[cite: 1], comprometiendo el sitio donante de splicing.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q2" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">+</code> indica una inserción acumulativa de dos nucleótidos exónicos dentro del marco de lectura abierto.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q2" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">+</code> representa una duplicación génica parcial que genera un evento de terminación retrasada en el extremo 5'.</span>
+                    </label>
+                </div>
+                <div id="feedback-q2" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 3 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 3: Gen LDLR - Interpretación de Reporte VUS</div>
+                <h3 class="text-lg font-bold text-white mb-3">3. Ante un reporte en el gen <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">LDLR</code> que cataloga la variante <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1241T>C</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Leu414Pro</code>) estrictamente como <b>VUS</b> (Variant of Uncertain Significance)[cite: 1], ¿cuál de las siguientes conductas clínicas y de interpretación molecular es la técnicamente inaceptable?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q3" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Utilizar la VUS de forma aislada para realizar diagnóstico presuntivo definitivo o cascada familiar predictiva en parientes asintomáticos, debido a la ambigüedad en su patogenicidad[cite: 1].</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q3" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Reevaluar periódicamente la base de datos de variantes para verificar si nuevos estudios funcionales o co-segregaciones familiares han re-clasificado la VUS a benigna o patogénica.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q3" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Complementar la evaluación clínica con estudios bioquímicos del perfil lipídico y análisis de segregación en progenitores.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q3" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Considerar que la transición pirimidínica (<code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">T>C</code>) es por sí misma prueba irrefutable de haploinsuficiencia hepática sin requerir más evidencia.</span>
+                    </label>
+                </div>
+                <div id="feedback-q3" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 4 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 4: Gen BRCA2 - Símbolos fs y *</div>
+                <h3 class="text-lg font-bold text-white mb-3">4. En el análisis del reporte de <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">BRCA2</code> que muestra <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.5946delT</code> / <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Ser1982Argfs*22</code>[cite: 2], ¿cómo se interpretan con rigor matemático y bioquímico los símbolos <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">fs</code> y el asterisco con número (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">*22</code>)?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q4" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El símbolo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">fs</code> indica un cambio de marco de lectura (frameshift) a partir del codón 1982, y <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">*22</code> especifica que el codón de parada anticipado se ubica exactamente 22 aminoácidos adelante en el nuevo marco de lectura.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q4" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El símbolo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">fs</code> denota fusión estructural con el exón contiguo, mientras que <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">*22</code> señala que la proteína resultante posee 22 sitios de glicosilación adicionales en el dominio C-terminal.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q4" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El símbolo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">fs</code> significa fragmentación estable del transcrito, y <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">*22</code> representa el número de copias mutadas detectadas en el ensayo multiplex.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q4" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El símbolo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">fs</code> representa un retraso en el tiempo de elusión cromatográfica, y <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">*22</code> denota la temperatura de melting del cebador.</span>
+                    </label>
+                </div>
+                <div id="feedback-q4" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 5 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 5: Gen CFTR - Símbolo de Rango (_)</div>
+                <h3 class="text-lg font-bold text-white mb-3">5. En la variante <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1521_1523delCTT</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Phe508del</code>)[cite: 1], ¿cuál es la función estricta del guion bajo (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">_</code>) en la notación HGVS y por qué se diferencia de los operadores de sustitución o adición?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q5" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El guion bajo actúa exclusivamente como operador aritmético de sustracción para restar 1523 del total de bases del gen.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q5" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El guion bajo separa los extremos de un rango o intervalo continuo de posiciones nucleotídicas (desde el nucleótido 1521 hasta el 1523 inclusive) que participan de manera conjunta en la operación de deleción (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">del</code>)[cite: 1].</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q5" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El guion bajo denota un enlace covalente cruzado inducido por luz ultravioleta entre las bases contiguas.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q5" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El guion bajo representa la unión de un intrón críptico intermedio que compensa la pérdida del triplete.</span>
+                    </label>
+                </div>
+                <div id="feedback-q5" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 6 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 6: Genética Molecular - Símbolo de Región 3' UTR (*)</div>
+                <h3 class="text-lg font-bold text-white mb-3">6. Al evaluar un reporte molecular que detalla la variante <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.*12A>G</code>, ¿cuál es la diferencia conceptual sutil pero crítica entre el uso del asterisco (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">*</code>) y la numeración estándar en la región codificante?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q6" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El asterisco denota que la mutación genera un codón de parada prematuro exacto en el duodécimo codón de la proteína.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q6" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El asterisco indica que la posición nucleotídica se localiza aguas abajo del codón de parada natural, específicamente en la región no traducida 3' (3' UTR) del ARNm, contándose a partir del primer nucleótido posterior al codón stop.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q6" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El asterisco señala una modificación post-traduccional de fosforilación en el extremo amino terminal.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q6" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El asterisco representa un error de secuenciación con baja calidad de lectura en el secuenciador automático.</span>
+                    </label>
+                </div>
+                <div id="feedback-q6" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 7 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 7: Bioquímica y Símbolos HGVS (>)</div>
+                <h3 class="text-lg font-bold text-white mb-3">7. En la notación <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1241T>C</code>[cite: 1], el operador mayor que (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code>) es fundamental en la nomenclatura. ¿Cuál de los siguientes enunciados describe con máxima precisión su definición formal frente a posibles confusiones?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q7" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica que la base de la izquierda posee mayor peso molecular que la base de la derecha en la electroforesis capilar.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q7" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa el evento de sustitución ("cambia a"), estableciendo que el nucleótido de referencia de la secuencia silvestre (izquierda) es reemplazado por la variante observada (derecha)[cite: 1].</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q7" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala la dirección obligatoria de la transcripción desde el extremo 5' hacia el extremo 3' en la hebra codificante.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q7" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Denota una amplificación exponencial mayor de la señal fluorescente durante la PCR en tiempo real.</span>
+                    </label>
+                </div>
+                <div id="feedback-q7" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 8 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 8: Genética Clínica - Heterocigosis Compuesta</div>
+                <h3 class="text-lg font-bold text-white mb-3">8. Cuando un informe de laboratorio concluye que un paciente presenta <b>heterocigosis compuesta</b> (dos variantes patogénicas distintas en el mismo locus, una heredada por vía materna y otra por vía paterna)[cite: 1], ¿cómo se diferencia conceptualmente este estado genético de la heterocigosis simple y de la homocigosis?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q8" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Significa que ambas copias cromosómicas del gen portan exactamente la misma mutación idéntica heredada de ambos padres.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q8" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Significa que el individuo porta dos mutaciones diferentes en el mismo gen (una en cada alelo parental)[cite: 1], lo cual compromete la funcionalidad proteica total de manera similar a la homocigosis en patologías recesivas, al no existir ningún alelo silvestre completo.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q8" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica que el paciente es portador asintomático protegido debido a un fenómeno de complementación interalélica recíproca.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q8" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa un artefacto técnico por superposición de secuencias en genes paralólogos altamente homólogos.</span>
+                    </label>
+                </div>
+                <div id="feedback-q8" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 9 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 9: Nomenclatura Proteica - Símbolo de Igualdad (=)</div>
+                <h3 class="text-lg font-bold text-white mb-3">9. Si un reporte molecular detalla una sustitución en el ADN pero en la sección de proteínas se anota como <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Gly542=</code>, ¿cómo interpreta el especialista el uso estricto del signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">=</code>?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q9" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica que la proteína resultante es idéntica a la silvestre (variante sinónima o silenciosa), ya que la sustitución nucleotídica no modificó el aminoácido codificado gracias a la redundancia del código genético.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q9" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala que se duplicó exactamente el exón que codifica para la glicina en la posición 542.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q9" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Denota una mutación de sentido erróneo con una eficiencia enzimática equivalente al 100%.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q9" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa un error tipográfico del sistema automatizado de anotación clínica por falta de base de datos.</span>
+                    </label>
+                </div>
+                <div id="feedback-q9" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 10 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 10: Informes Genéticos - Identificadores RefSeq (NM_)</div>
+                <h3 class="text-lg font-bold text-white mb-3">10. En todo reporte clínico de genética molecular se exige el uso de un identificador de referencia como <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">NM_000492.3</code> para <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">CFTR</code>. ¿Cuál es el fundamento metodológico de esta exigencia?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q10" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica el costo monetario estipulado por el consorcio internacional para el análisis de secuenciación.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q10" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Fija inequívocamente la secuencia de ARN mensajero oficial de referencia y su versión curada, asegurando que la numeración de nucleótidos y codones sea estandarizada y reproducible universalmente entre laboratorios.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q10" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Certifica que la muestra biológica fue procesada mediante un ensayo clínico controlado aleatorizado de fase III.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q10" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Define con exactitud matemática el porcentaje de penetrancia clínica esperada en la descendencia directa.</span>
+                    </label>
+                </div>
+                <div id="feedback-q10" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 11 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 11: Nomenclatura HGVS - Símbolo de Duplicación (dup)</div>
+                <h3 class="text-lg font-bold text-white mb-3">11. Si un reporte genético describe la anotación <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.dup</code>, ¿cómo define la normativa HGVS esta alteración estructural frente a inserciones o expansiones?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q11" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La aparición de un bloque de nucleótidos copiado directamente e insertado de manera adyacente en orientación directa respecto al segmento original de referencia.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q11" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Una deleción homocigota de todo el brazo cromosómico por inestabilidad mitótica.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q11" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Una inversión pericéntrica mediada por elementos transponibles Alu.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q11" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Un error sistemático de calibración en la intensidad láser del secuenciador.</span>
+                    </label>
+                </div>
+                <div id="feedback-q11" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 12 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 12: Nomenclatura HGVS - Símbolo de Inserción (ins)</div>
+                <h3 class="text-lg font-bold text-white mb-3">12. Al interpretar un reporte con la abreviatura <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">ins</code> y un guion bajo entre posiciones (ej. <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">100_101ins</code>), ¿cómo se delimitan rigurosamente los sitios de inserción?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q12" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El guion bajo entre dos nucleótidos adyacentes indica el espacio físico exacto entre ambas posiciones donde se ha incorporado el nuevo material genético exógeno.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q12" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica la sustracción lineal de bases comprendidas entre el nucleótido 100 y el 101.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q12" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala una inversión simétrica de bases entre los codones 100 y 101.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q12" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa un error de alineación bioinformática en el ensamblaje de lecturas cortas.</span>
+                    </label>
+                </div>
+                <div id="feedback-q12" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 13 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 13: Oncogenética - Germinal vs Somática</div>
+                <h3 class="text-lg font-bold text-white mb-3">13. En los reportes de oncogenética (paneles hereditarios con <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">BRCA1/BRCA2</code>), la distinción entre variante <b>germinal</b> y <b>somática</b> es crucial. ¿Cuál es la implicación clínica exacta de esta diferenciación?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q13" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Las variantes germinales están presentes en todas las células nucleadas del organismo y son heredables (riesgo familiar); las somáticas se restringen exclusivamente al tejido tumoral y no se transmiten por vía germinal.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q13" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Las variantes somáticas son las únicas capaces de generar resistencia a la terapia dirigida con inhibidores de PARP.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q13" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Las variantes germinales desaparecen espontáneamente tras la inducción de remisión tumoral.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q13" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">No existe ninguna diferencia biológica ni pronóstica entre ambas categorías en la terapéutica oncológica actual.</span>
+                    </label>
+                </div>
+                <div id="feedback-q13" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 14 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 14: Nomenclatura Proteica - Símbolo de Extensión (Ext)</div>
+                <h3 class="text-lg font-bold text-white mb-3">14. Si un reporte describe una alteración traduccional notificada como <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.*330Ext*15</code>, ¿cómo se interpreta rigurosamente este símbolo en la dinámica de terminación?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q14" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica un evento de terminación <b>retrasada</b>, donde el codón de parada natural es alterado, permitiendo que el ribosoma continúe traduciendo en la región 3' UTR hasta un codón stop alternativo 15 aminoácidos más allá (proteína extendida).</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q14" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica una terminación <b>prematura</b> severa en el codón 15 del extremo amino.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q14" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala la extracción enzimática del ARN mensajero durante la electroforesis capilar.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q14" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa un error de transcripción in vitro sin validez biológica ni clínica.</span>
+                    </label>
+                </div>
+                <div id="feedback-q14" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 15 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 15: Interpretación de Reportes - Mosaicismo Genético</div>
+                <h3 class="text-lg font-bold text-white mb-3">15. Cuando un reporte molecular indica la presencia de una variante en condición de <b>mosaicismo</b> (ej. con un alelo mutant frequency del 25%), ¿cómo se interpreta esta condición en el contexto clínico del paciente?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q15" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica la coexistencia de dos o más poblaciones celulares con genotipos diferentes en un mismo individuo, originadas por una mutación post-zigótica durante el desarrollo embrionario.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q15" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica que el paciente heredó la mutación exactamente al 50% de ambos progenitores de forma simultánea.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q15" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala un error técnico de contaminación cruzada con otra muestra en el laboratorio de secuenciación.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q15" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa una variante mitocondrial benigna sin expresión en tejidos somáticos diferenciados.</span>
+                    </label>
+                </div>
+                <div id="feedback-q15" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 16 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 16: Gen FGFR3 - Acondroplasia y Símbolos</div>
+                <h3 class="text-lg font-bold text-white mb-3">16. En el reporte de acondroplasia se describe <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1138G>A</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Gly380Arg</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">FGFR3</code>. Combinando el análisis de sustitución puntual y los símbolos del reporte:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q16" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> denota sustitución por transición purínica (G a A), generando un cambio missense (glicina por arginina) sin alterar la longitud lineal ni causar paradas prematuras.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q16" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> indica una inserción masiva que causa terminación prematura en el codón 380.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q16" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La nomenclatura corresponde a una deleción intrónica con extensión terminal proteica.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q16" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El reporte descarta patología ósea al tratarse de una variante sinónima silente.</span>
+                    </label>
+                </div>
+                <div id="feedback-q16" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 17 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 17: Gen HTT - Corchetes en Repeticiones [ ]</div>
+                <h3 class="text-lg font-bold text-white mb-3">17. En el reporte molecular del gen <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">HTT</code> se observa la notación <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.17_19delCAG[45]</code>. ¿Qué indica específicamente el uso de corchetes <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">[45]</code> en la interpretación del reporte?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q17" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indican el número exacto de unidades de repetición en tándem detectadas (45 repeticiones del triplete CAG), lo cual se encuentra en el rango patogénico de expansión para Huntington.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q17" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Denotan que la variante se encuentra confinada y oculta dentro del intrón 45.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q17" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representan un intervalo de confianza estadística del 95% en la amplificación por PCR.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q17" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señalan una deleción masiva de 45 exones terminales en el cromosoma 4.</span>
+                    </label>
+                </div>
+                <div id="feedback-q17" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 18 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 18: Gen FBN1 - Síndrome de Marfan y Transición</div>
+                <h3 class="text-lg font-bold text-white mb-3">18. En el reporte de un paciente con sospecha de conectivopatía se identifica <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.3984G>A</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Cys1328Tyr</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">FBN1</code>. Analizando los símbolos y el impacto:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q18" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El operador <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> describe una transición purínica que cambia cisteína por tirosina (missense), sin inducir terminación prematura ni retrasada, alterando los puentes disulfuro de la fibrilina-1.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q18" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El operador <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> denota una inserción intrónica con terminación prematura inmediata.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q18" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La nomenclatura indica una deleción completa del dominio EGF del exón 39.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q18" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El reporte confirma un polimorfismo benigno sin asociación a aneurisma aórtico.</span>
+                    </label>
+                </div>
+                <div id="feedback-q18" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 19 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 19: Gen PAH - Fenilcetonuria Clásica y Reporte</div>
+                <h3 class="text-lg font-bold text-white mb-3">19. En el reporte molecular de un paciente con hiperfenilalaninemia se describe <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.842C>T</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Pro284Leu</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">PAH</code>. ¿Qué conclusión diagnóstica emite este reporte sobre la enzima?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q19" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Confirma una transición pirimidínica missense que altera el residuo prolina por leucina en el codón 284 de la fenilalanina hidroxilasa, comprometiendo su actividad catalítica hepática sin truncamiento prematuro.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q19" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica una deleción masiva de 842 exones en el tejido hepático.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q19" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala una inserción traduccional con terminación retrasada infinita.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q19" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa un marcador silente sin repercusión en los niveles plasmáticos de fenilalanina.</span>
+                    </label>
+                </div>
+                <div id="feedback-q19" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 20 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 20: Gen F8 - Hemofilia A y Reordenamiento Estructural</div>
+                <h3 class="text-lg font-bold text-white mb-3">20. En el estudio molecular de un paciente con diátesis hemorrágica severa se reporta una inversión mediada por recombinación entre el intrón 22 de <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">F8</code> y secuencias teloméricas (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">Int22h-1 / Int22h-2</code>). ¿Por qué este tipo de reporte difiere radicalmente de uno de mutación puntual (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code>)?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q20" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Porque se trata de un reordenamiento estructural a gran escala mediado por homología segmental que desorganiza por completo la transcripción del factor VIII, sin poder expresarse mediante una nomenclatura puntual de sustitución o transición/transversión.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q20" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Porque representa una simple transición purínica silente en el codón 22 del exón principal.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q20" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Porque induce una terminación retrasada con hiperproducción de factor de coagulación plasmático.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q20" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Porque es un artefacto metodológico exclusivo de la secuenciación por electroforesis capilar de Sanger.</span>
+                    </label>
+                </div>
+                <div id="feedback-q20" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 21 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 21: Gen SMN1 - Atrofia Muscular Espinal y Deleción</div>
+                <h3 class="text-lg font-bold text-white mb-3">21. En el reporte molecular de AME se observa <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">EX7del</code> en homocigosis para <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">SMN1</code>. ¿Cómo interpreta el genetista clínico este hallazgo?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q21" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como la deleción bialélica completa del exón 7 en el gen SMN1, confirmando el diagnóstico molecular de atrofia muscular espinal al carecer de copias funcionales de este gen.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q21" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como una sustitución por transición purínica que genera terminación retrasada en el exón 7.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q21" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como un polimorfismo benigno frecuente en la población general de control.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q21" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como una inserción de 7 exones duplicados por duplicación en tándem cromosómico.</span>
+                    </label>
+                </div>
+                <div id="feedback-q21" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 22 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 22: Gen COL1A1 - Osteogénesis Imperfecta y Símbolos</div>
+                <h3 class="text-lg font-bold text-white mb-3">22. En el reporte de fragilidad ósea se describe <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.2005G>A</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Gly669Ser</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">COL1A1</code>. Analizando los operadores del reporte:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q22" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> denota una transición purínica (G a A) missense que sustituye glicina por serina en el dominio helicoidal del colágeno, sin generar codones de parada prematuros ni retrasados.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q22" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> indica una inserción de 2005 aminoácidos por expansión repetitiva en tándem.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q22" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La nomenclatura corresponde a una deleción masiva de 669 exones constitutivos principales.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q22" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El reporte describe una variante silente sin alteración de la matriz extracelular ósea.</span>
+                    </label>
+                </div>
+                <div id="feedback-q22" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 23 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 23: Gen NF1 - Neurofibromatosis y Símbolo Ter / *</div>
+                <h3 class="text-lg font-bold text-white mb-3">23. En un reporte de NF1 se indica <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.3826C>T</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Gln1276Ter</code> o <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Gln1276*</code>). ¿Qué significado clínico y molecular aporta el símbolo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">Ter</code> (o <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">*</code>) en este reporte?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q23" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica la creación de un codón de parada prematuro (evento de terminación anticipada) que trunca la neurofibromina en el aminoácido 1276, conduciendo comúnmente a degradación del ARNm por NMD.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q23" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica una terminación <b>retrasada</b> con adición permanente de 1276 residuos exógenos en el extremo carboxilo.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q23" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala un sitio terminal de fosforilación enzimática por tirosina quinasa de membrana.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q23" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa una translocación recíproca equilibrada con el cromosoma 17 patognomónica.</span>
+                    </label>
+                </div>
+                <div id="feedback-q23" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 24 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 24: Gen APC - Poliposis y Símbolos de Inserción</div>
+                <h3 class="text-lg font-bold text-white mb-3">24. En el reporte del gen <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">APC</code> se describe <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.3183_3184insACA</code>. Interpretando los símbolos de este reporte:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q24" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El guion bajo entre 3183 y 3184 indica el sitio de inserción exacta de los nucleótidos ACA; al ser 3 bases (múltiplo de 3), inserta un aminoácido sin alterar el marco de lectura global ni inducir terminación prematura por frameshift.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q24" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica una deleción masiva de 3184 bases con terminación retrasada infinita.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q24" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala una transición purínica silente en el codón 3183.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q24" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa un error bioinformático de alineación en el exón 15.</span>
+                    </label>
+                </div>
+                <div id="feedback-q24" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 25 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 25: Gen FBN1 - Síndrome de Marfan y Splicing (+1)</div>
+                <h3 class="text-lg font-bold text-white mb-3">25. Si en un reporte de <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">FBN1</code> se lee <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.5160+1G>A</code>, ¿cómo interpreta el especialista los signos <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">+1</code> y la sustitución <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">G>A</code>?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q25" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">+1</code> denota el primer nucleótido del intrón aguas abajo del exón 5160 (sitio donante canónico de splicing), y la transición <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">G>A</code> destruye este sitio, causando errores de empalme y posible terminación prematura.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q25" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica una adición de 5160 bases exónicas por duplicación en tándem cromosómico.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q25" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala una variante sinónima ubicada en la región 3' UTR lejana del gen.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q25" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa una transversión silente sin efecto sobre la maduración del ARNm mensajero.</span>
+                    </label>
+                </div>
+                <div id="feedback-q25" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 26 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 26: Gen TSC2 - Esclerosis Tuberosa y Nomenclatura IVS</div>
+                <h3 class="text-lg font-bold text-white mb-3">26. En el estudio molecular de esclerosis tuberosa se reporta <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.IVS12-2A>G</code> (notación clásica basada en intrones). ¿Cómo se interpreta esta nomenclatura en el reporte clínico?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q26" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El prefijo <code class="bg-slate-950 px-1 py-0.5 rounded text-teal-300">IVS12-2</code> indica el segundo nucleótido antes del final del intrón 12 (sitio aceptor de splicing), y la transición <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">A>G</code> abole el empalme normal generando truncamiento proteico.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q26" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica la inversión de 12 exones completos en el cromosoma 16.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q26" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala una inserción de 2 bases en el codón de inicio traduccional.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q26" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa una variante sinónima sin repercusión en la tuberina.</span>
+                    </label>
+                </div>
+                <div id="feedback-q26" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 27 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 27: Gen CYP21A2 - Hiperplasia Suprarrenal y Reporte</div>
+                <h3 class="text-lg font-bold text-white mb-3">27. En un reporte de <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">CYP21A2</code> se detalla <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Ile172Asn</code>. ¿Cómo interpreta el endocrinólogo este hallazgo en el reporte?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q27" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como un cambio missense (isoleucina por asparagina en la posición 172) que reduce parcialmente la actividad de la 21-hidroxilasa, asociado a la forma clásica perdedora de sal o virilizante simple, sin codones de parada prematuros.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q27" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como una deleción completa del cromosoma 6 con terminación retrasada masiva.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q27" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como un polimorfismo completamente benigno sin alteración en la esteroidogénesis.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q27" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como una inserción intrónica que bloquea la transcripción mitocondrial del colesterol.</span>
+                    </label>
+                </div>
+                <div id="feedback-q27" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 28 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 8: Gen COL4A5 - Síndrome de Alport y Reporte</div>
+                <h3 class="text-lg font-bold text-white mb-3">28. En un paciente masculino con hematuria y falla renal se reporta <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.4565G>A</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Gly1522Glu</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">COL4A5</code>. Analizando la nomenclatura:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q28" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> indica transición purínica missense (glicina por ácido glutámico) en el colágeno IV, afectando la membrana basal glomerular sin inducir paradas prematuras.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q28" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> representa una inserción masiva con terminación retrasada en el tejido renal.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q28" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La nomenclatura describe una deleción completa del cromosoma X.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q28" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El reporte confirma un hallazgo benigno sin relación con la enfermedad glomerular.</span>
+                    </label>
+                </div>
+                <div id="feedback-q28" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 29 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 29: Gen ATP7B - Enfermedad de Wilson y Reporte</div>
+                <h3 class="text-lg font-bold text-white mb-3">29. En el reporte molecular de un paciente con acumulación hepática de cobre se describe <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.2304C>T</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.His768Tyr</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">ATP7B</code>. Interpretando los operadores:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q29" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La transición pirimidínica (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">C>T</code>) genera un cambio missense (histidina a tirosina en el codón 768) de la ATPasa transportadora de cobre, alterando su función excretora biliar sin paradas prematuras.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q29" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La nomenclatura indica una deleción del gen ATP7B con terminación retrasada.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q29" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala una inserción traduccional en el dominio amino terminal de la proteína.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q29" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa un marcador silente sin retención tóxica de metales pesados.</span>
+                    </label>
+                </div>
+                <div id="feedback-q29" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 30 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 30: Gen HFE - Hemocromatosis y Reporte</div>
+                <h3 class="text-lg font-bold text-white mb-3">30. En el reporte genético de un paciente con sobrecarga férrica se documenta la variante clásica <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.845G>A</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Cys282Tyr</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">HFE</code>. ¿Cómo se interpreta el impacto estructural en el reporte?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q30" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Es una transición purínica missense que altera el residuo de cisteína 282 por tirosina, impidiendo la formación de un puente disulfuro esencial para la interacción con el receptor de transferrina, sin generar codones stop prematuros.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q30" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Es una inserción masiva que causa terminación prematura en el exón 3.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q30" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Es una deleción exónica con terminación retrasada en el hígado.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q30" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Es una variante silente sin alteración del metabolismo férrico corporal.</span>
+                    </label>
+                </div>
+                <div id="feedback-q30" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 31 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 31: Gen SERPINA1 - Alfa-1 Antitripsina</div>
+                <h3 class="text-lg font-bold text-white mb-3">31. En el reporte de un paciente con enfisema se describe <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1096G>A</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Glu366Lys</code>, alelo Z) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">SERPINA1</code>. Analizando los operadores y el reporte:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q31" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> denota transición purínica missense (ácido glutámico por lisina), provocando polimerización proteica en el retículo endoplásmico hepático sin paradas prematuras.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q31" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El signo <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">></code> indica una inserción de 1096 bases con terminación retrasada.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q31" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La nomenclatura describe una deleción completa del gen SERPINA1.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q31" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El reporte confirma protección pulmonar total por variante silente.</span>
+                    </label>
+                </div>
+                <div id="feedback-q31" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 32 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 32: Gen RHO - Retinitis Pigmentosa</div>
+                <h3 class="text-lg font-bold text-white mb-3">32. En un reporte oftalmológico se reporta <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.68C>G</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Pro23His</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">RHO</code>. Interpretando la mutación:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q32" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Es una transversión (citosina por guanina) que ocasiona un cambio missense (prolina por histidina en la posición 23) de la rodopsina, alterando el plegamiento fotorreceptor sin codones stop prematuros.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q32" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Es una inserción masiva que produce terminación retrasada en la retina.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q32" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Es una deleción exónica con terminación prematura en el codón 1.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q32" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Es una variante silente sin repercusión en la agudeza visual nocturna.</span>
+                    </label>
+                </div>
+                <div id="feedback-q32" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 33 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 33: Gen KCNQ1 - Síndrome de QT Largo</div>
+                <h3 class="text-lg font-bold text-white mb-3">33. En un paciente evaluado por arritmias se describe <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1702C>T</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Arg568Cys</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">KCNQ1</code>. ¿Cómo interpreta el cardiólogo este reporte?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q33" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como una transición pirimidínica missense que sustituye arginina por cisteína en el canal de potasio cardíaco, afectando la repolarización miocárdica sin inducir paradas prematuras.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q33" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como una deleción de 1702 exones con terminación retrasada.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q33" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como un hallazgo benigno sin prolongación del intervalo QT.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q33" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Como una inserción intrónica que bloquea los canales de sodio.</span>
+                    </label>
+                </div>
+                <div id="feedback-q33" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 34 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 34: Gen RYR1 - Hipertermia Maligna</div>
+                <h3 class="text-lg font-bold text-white mb-3">34. En el reporte molecular de susceptibilidad anestésica se identifica <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1841C>T</code> (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">p.Thr614Met</code>) en <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">RYR1</code>. Analizando la nomenclatura:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q34" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La transición <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">C>T</code> genera un cambio missense (treonina por metionina en el codón 614) en el receptor de rianodina, alterando la regulación de calcio sarcoplásmico sin paradas prematuras.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q34" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica una deleción exónica con terminación retrasada en el músculo esquelético.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q34" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala una inserción de exones duplicados con resistencia a anestésicos halogenados.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q34" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa una variante silente sin riesgo de crisis hipertermica.</span>
+                    </label>
+                </div>
+                <div id="feedback-q34" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 35 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 35: Gen CFTR - Variante Poli-T en Intrón 8</div>
+                <h3 class="text-lg font-bold text-white mb-3">35. En el reporte complementario de <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">CFTR</code> se evalúa el tracto politimidínico del intrón 8 reportado como <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">c.1210-12T[5]</code>. ¿Cómo interpreta el especialista esta notación cuantitativa de bases?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q35" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica la presencia de un alelo con 5 timinas en el sitio aceptor del intrón 8 (empleando corchetes para la cantidad), lo que reduce la eficiencia de splicing y promueve la exclusión del exón 9 sin requerir sustitución puntual.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q35" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indica una inserción de 5 codones de parada prematura en el exón 9.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q35" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señala una duplicación masiva de 1210 exones en el canal CFTR.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q35" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa una variante sinónima sin efecto sobre la maduración del ARNm.</span>
+                    </label>
+                </div>
+                <div id="feedback-q35" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 36 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 36: Metodología NGS - Profundidad de Lectura (150X)</div>
+                <h3 class="text-lg font-bold text-white mb-3">36. En la sección metodológica de un reporte de NGS se especifica una <b>profundidad media de lectura de 150X</b> con una cobertura del 99.8%. ¿Qué indica este parámetro en la fiabilidad analítica del reporte?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q36" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Que cada nucleótido analizado fue secuenciado en promedio 150 veces de forma independiente, garantizando alta sensibilidad para detectar variantes incluso en mosaicismo bajo, abarcando casi todo el exoma dirigido.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q36" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Que el paciente posee 150 copias extras del genoma completo en sus leucocitos periféricos.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q36" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Que la muestra biológica requirió 150 días de cultivo celular previo al análisis molecular.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q36" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representa el costo total en dólares del panel multigenético de secuenciación.</span>
+                    </label>
+                </div>
+                <div id="feedback-q36" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 37 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 37: Criterios ACMG - Patogenicidad</div>
+                <h3 class="text-lg font-bold text-white mb-3">37. De acuerdo con las guías internacionales del ACMG empleadas en los reportes moleculares, ¿cuál de los siguientes criterios soporta con mayor peso la clasificación de una variante como <b>Patogénica</b>?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q37" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Una variante nula establecida (frameshift, nonsense o splicing canónico) en un gen donde la pérdida de función es un mecanismo patogénico conocido de la enfermedad.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q37" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Una variante sinónima con frecuencia alélica del 10% en bases de datos poblacionales gnomAD.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q37" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Una sustitución conservativa en una región no conservada evolutivamente entre especies.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q37" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La detección de la variante en un individuo sano de 90 años sin antecedentes familiares.</span>
+                    </label>
+                </div>
+                <div id="feedback-q37" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 38 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 38: Citogenética - Translocación t(9;22)</div>
+                <h3 class="text-lg font-bold text-white mb-3">38. En un reporte citogenético oncológico se describe el reordenamiento <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">t(9;22)(q34;q11.2)</code> (cromosoma Filadelfia). ¿Cómo se interpretan los componentes entre paréntesis <code class="bg-slate-950 px-1.5 py-0.5 rounded text-teal-300">(q34;q11.2)</code>?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q38" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Indican las bandas, regiones y subbandas cromosómicas específicas exactas donde ocurre el punto de rotura y fusión recíproca entre los cromosomas 9 y 22.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q38" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Señalan el número de copias duplicadas de ADN mitocondrial en células blásticas.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q38" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Denotan el peso molecular combinado de los genes BCR y ABL1 en kilodaltons.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q38" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Representan un intervalo de confianza estadístico para el diagnóstico de blastos mieloides.</span>
+                    </label>
+                </div>
+                <div id="feedback-q38" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 39 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 39: Genética Clínica - Estado Portador Autosómico Recesivo</div>
+                <h3 class="text-lg font-bold text-white mb-3">39. Cuando un reporte molecular de cribado concluye que un individuo sano es heterocigoto simple para una variante patogénica en un gen de herencia <b>autosómica recesiva</b>:</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q39" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El individuo es portador asintomático (no desarrollará la enfermedad monogénica clásica), pero presenta un riesgo reproductivo de transmitir dicha variante a su descendencia.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q39" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El individuo desarrollará necesariamente síntomas graves de la patología antes de los 30 años de edad.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q39" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">La variante se inactivará por impronta genómica parental de forma automática en los tejidos somáticos.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q39" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">El reporte carece de validez diagnóstica al no haberse evaluado el exoma completo tripartito.</span>
+                    </label>
+                </div>
+                <div id="feedback-q39" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- PREGUNTA 40 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Caso 40: Dictamen Final - Interpretación Integral de Reporte</div>
+                <h3 class="text-lg font-bold text-white mb-3">40. ¿Cuál es la jerarquía interpretativa y el propósito clínico final que debe cumplir un reporte de diagnóstico molecular emitido por un laboratorio certificado?</h3>
+                <div class="space-y-2">
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q40" value="a" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Integrar la identificación analítica de variantes (con nomenclatura HGVS estandarizada), su clasificación clínica basada en guías ACMG (patogénica, VUS, benigna), y correlacionarlas directamente con el fenotipo del paciente para orientar el pronóstico, tratamiento y consejo genético.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q40" value="b" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Listar de manera automatizada todas las diferencias genómicas encontradas sin filtrado clínico ni clasificación de patogenicidad.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q40" value="c" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Prescribir de forma obligatoria fármacos de terapia génica experimental sin evaluación médica previa.</span>
+                    </label>
+                    <label class="option-label flex items-start gap-3 bg-slate-950/60 border border-slate-800/80 p-3 rounded-lg cursor-pointer hover:bg-slate-800/50">
+                        <input type="radio" name="q40" value="d" class="mt-1 text-teal-500 focus:ring-teal-400">
+                        <span class="text-sm text-slate-200">Sustituir por completo la historia clínica y el examen físico del paciente por un algoritmo informático predictivo.</span>
+                    </label>
+                </div>
+                <div id="feedback-q40" class="mt-3 text-sm font-medium hidden"></div>
+            </div>
+
+            <!-- Botón de Envío y Resultados -->
+            <div class="pt-4 text-center">
+                <button type="button" id="submitBtn" class="bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold px-8 py-3 rounded-xl shadow-lg transition-all transform hover:scale-105">
+                    Calificar Examen Parcial
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Tarjeta de Resultados -->
+        <div id="resultsCard" class="hidden mt-8 bg-slate-900 border-2 border-teal-500/50 rounded-2xl p-6 shadow-2xl text-center">
+            <h2 class="text-2xl font-bold text-teal-400 mb-2">Resultados de la Evaluación</h2>
+            <p class="text-3xl font-extrabold text-white mb-4" id="scoreDisplay">0 / 40 (0%)</p>
+            <p class="text-slate-300 text-sm" id="feedbackMessage"></p>
+        </div>
+
+    </div>
+
+    <script>
+        // Temporizador
+        let seconds = 0;
+        const timerEl = document.getElementById('timer');
+        setInterval(() => {
+            seconds++;
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            timerEl.textContent = `Tiempo transcurrido: ${mins}:${secs}`;
+        }, 1000);
+
+        // Respuestas correctas (Opción B en casi todas, garantizando distractores extremadamente cercanos en A, C, D)
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'b',
+            q3: 'a',
+            q4: 'a',
+            q5: 'b',
+            q6: 'b',
+            q7: 'b',
+            q8: 'b',
+            q9: 'a',
+            q10: 'b',
+            q11: 'a',
+            q12: 'a',
+            q13: 'a',
+            q14: 'a',
+            q15: 'a',
+            q16: 'a',
+            q17: 'a',
+            q18: 'a',
+            q19: 'a',
+            q20: 'a',
+            q21: 'a',
+            q22: 'a',
+            q23: 'a',
+            q24: 'a',
+            q25: 'a',
+            q26: 'a',
+            q27: 'a',
+            q28: 'a',
+            q29: 'a',
+            q30: 'a',
+            q31: 'a',
+            q32: 'a',
+            q33: 'a',
+            q34: 'a',
+            q35: 'a',
+            q36: 'a',
+            q37: 'a',
+            q38: 'a',
+            q39: 'a',
+            q40: 'a'
+        };
+
+        const explanations = {
+            q1: "Correcto. El símbolo 'X' (o Ter) denota codón de parada prematuro (nonsense) originado por transversión.",
+            q2: "Correcto. El signo '+' en intrones cuenta aguas abajo desde el extremo 3' del exón de referencia (c.942).",
+            q3: "Correcto. Es inaceptable usar una VUS de forma aislada para diagnóstico definitivo o cascada familiar predictiva.",
+            q4: "Correcto. 'fs' indica cambio de marco y '*22' el codón de parada prematuro a 22 aminoácidos de distancia.",
+            q5: "Correcto. El guion bajo ('_') especifica rangos o intervalos contiguos afectados por la variante.",
+            q6: "Correcto. El asterisco '*' indica posiciones en la región 3' UTR a partir del codón de parada traduccional.",
+            q7: "Correcto. El símbolo '>' representa sustitución ('cambia a') de la referencia por la variante observada.",
+            q8: "Correcto. La heterocigosis compuesta implica dos mutaciones distintas en alelos opuestos, comprometiendo la función proteica.",
+            q9: "Correcto. El signo '=' indica variante sinónima o silenciosa donde la proteína final es idéntica a la silvestre.",
+            q10: "Correcto. Los códigos RefSeq (NM_) fijan la secuencia oficial de referencia para estandarizar la numeración.",
+            q11: "Correcto. 'dup' indica un bloque copiado e insertado de forma adyacente en orientación directa.",
+            q12: "Correcto. Las inserciones ('ins') se delimitan indicando las dos posiciones adyacentes separadas por guion bajo.",
+            q13: "Correcto. Las variantes germinales están en todas las células nucleadas y son heredables; las somáticas solo en el tumor.",
+            q14: "Correcto. 'Ext' designa terminación retrasada donde el ribosoma continúa traduciendo en la región 3' UTR.",
+            q15: "Correcto. El mosaicismo denota poblaciones celulares con genotipos diferentes originadas por mutación post-zigótica.",
+            q16: "Correcto. El operador '>' denota transición purínica missense sin alterar marcos de lectura ni generar paradas prematuras.",
+            q17: "Correcto. Los corchetes '[45]' indican el número exacto de repeticiones en tándem detectadas.",
+            q18: "Correcto. Transición purínica missense que altera cisteína por tirosina en FBN1 sin paradas prematuras/retrasadas.",
+            q19: "Correcto. Transición pirimidínica missense que compromete la actividad de la fenilalanina hidroxilasa hepática.",
+            q20: "Correcto. La inversión del intrón 22 es un reordenamiento estructural a gran escala exento de nomenclatura puntual.",
+            q21: "Correcto. Deleción bialélica del exón 7 en SMN1 confirma diagnóstico molecular de atrofia muscular espinal.",
+            q22: "Correcto. Transición purínica missense que sustituye glicina por serina en el colágeno sin paradas prematuras.",
+            q23: "Correcto. 'Ter' o '*' denota codón de parada prematuro que trunca la neurofibromina.",
+            q24: "Correcto. Inserción de 3 nucleótidos (múltiplo de 3) preserva el marco de lectura global sin frameshift.",
+            q25: "Correcto. El signo '+1' denota el primer nucleótido del intrón (sitio donante de splicing) cuya alteración causa empalme anómalo.",
+            q26: "Correcto. 'IVS12-2' indica el sitio aceptor de splicing en el intrón 12, aboliendo el empalme normal.",
+            q27: "Correcto. Cambio missense que reduce parcialmente la actividad de la 21-hidroxilasa sin codones stop prematuros.",
+            q28: "Correcto. Transición purínica missense en COL4A5 que afecta la membrana basal sin paradas prematuras.",
+            q29: "Correcto. Transición pirimidínica missense en ATP7B que altera el transporte de cobre sin paradas prematuras.",
+            q30: "Correcto. Transición purínica missense que destruye puente disulfuro esencial en la proteína HFE.",
+            q31: "Correcto. Transición purínica missense que causa polimerización en retículo endoplásmico hepático sin paradas prematuras.",
+            q32: "Correcto. Transversión missense que altera el plegamiento de la rodopsina sin codones stop prematuros.",
+            q33: "Correcto. Transición pirimidínica missense que afecta la repolarización miocárdica en KCNQ1.",
+            q34: "Correcto. Transición pirimidínica missense que altera la regulación de calcio en RYR1 sin paradas prematuras.",
+            q35: "Correcto. Notación cuantitativa de politimidinas en intrón 8 que modula la eficiencia de splicing sin sustitución puntual.",
+            q36: "Correcto. Profundidad 150X indica que cada nucleótido se secuenció en promedio 150 veces, asegurando alta sensibilidad.",
+            q37: "Correcto. Variante nula establecida (frameshift/nonsense) en gen con pérdida de función patogénica.",
+            q38: "Correcto. Las coordenadas en paréntesis indican bandas y subbandas cromosómicas de los puntos de rotura y fusión.",
+            q39: "Correcto. El heterocigoto simple para gen recesivo es portador asintomático con riesgo de transmisión.",
+            q40: "Correcto. El reporte integra análisis analítico, clasificación ACMG y correlación clínica con el fenotipo."
+        };
+
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            let score = 0;
+            const total = 40;
+
+            for (let i = 1; i <= total; i++) {
+                const qKey = `q${i}`;
+                const selected = document.querySelector(`input[name="${qKey}"]:checked`);
+                const feedbackEl = document.getElementById(`feedback-${qKey}`);
+                feedbackEl.classList.remove('hidden');
+
+                if (selected) {
+                    if (selected.value === correctAnswers[qKey]) {
+                        score++;
+                        feedbackEl.textContent = "✔ " + explanations[qKey];
+                        feedbackEl.className = "mt-3 text-sm font-medium text-teal-400 bg-teal-950/40 p-2.5 rounded-lg border border-teal-800/50";
+                    } else {
+                        feedbackEl.textContent = "✖ Incorrecto. " + explanations[qKey];
+                        feedbackEl.className = "mt-3 text-sm font-medium text-rose-400 bg-rose-950/40 p-2.5 rounded-lg border border-rose-800/50";
+                    }
+                } else {
+                    feedbackEl.textContent = "✖ No respondida. " + explanations[qKey];
+                    feedbackEl.className = "mt-3 text-sm font-medium text-amber-400 bg-amber-950/40 p-2.5 rounded-lg border border-amber-800/50";
+                }
+            }
+
+            const percentage = Math.round((score / total) * 100);
+            const resultsCard = document.getElementById('resultsCard');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const feedbackMessage = document.getElementById('feedbackMessage');
+
+            scoreDisplay.textContent = `${score} / ${total} (${percentage}%)`;
+            resultsCard.classList.remove('hidden');
+
+            if (percentage >= 90) {
+                feedbackMessage.textContent = "¡Nivel sobresaliente! Has superado con éxito los distractores de máxima complejidad en nomenclatura HGVS y genética molecular.";
+            } else if (percentage >= 70) {
+                feedbackMessage.textContent = "¡Excelente desempeño! Tienes un dominio avanzado, aunque algunos distractores sutiles lograron confundirte.";
+            } else {
+                feedbackMessage.textContent = "Examen superado con dificultad alta. Se recomienda repasar los matices técnicos de los símbolos HGVS y reportes clínicos.";
+            }
+
+            resultsCard.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
